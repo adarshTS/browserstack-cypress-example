@@ -10,13 +10,6 @@
             "versions": [
                 "latest"
             ]
-        },
-        {
-            "browser": "chrome",
-            "os": "OS X Mojave",
-            "versions": [
-                "latest-1"
-            ]
         }
     ],
     "run_settings": {
@@ -24,7 +17,7 @@
         "project_name": "Cypress-BStackProject",
         "build_name": "cypress-bstack-build",
         "exclude": [],
-        "parallels": 2,
+        "parallels": 1,
         "npm_dependencies": {
             "cypress": "10.8.0"
         },
