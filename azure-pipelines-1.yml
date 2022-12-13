@@ -11,12 +11,14 @@ steps:
   inputs:
     versionSpec: '16'
   displayName: 'Install Node.js'
-- task: BrowserStackResults@1
+- task: BrowserStackConfig@0
   inputs:
-    browserstackProduct: 'automate'
-
+    BrowserStackServiceEndPoint: 'BrowserStack'
 - script: |
     npm install
     npm install cypress --save-dev
     browserstack-cyress run
   displayName: 'npm install and build'
+- task: BrowserStackResults@1
+  inputs:
+    browserstackProduct: 'automate'
