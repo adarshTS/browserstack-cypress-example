@@ -17,7 +17,7 @@ steps:
 - script: |
     npm install
     npm install cypress --save-dev
-    browserstack-cyress run
+    browserstack-cypress run
   displayName: 'npm install and build'
 - task: BrowserStackResults@1
   inputs:
