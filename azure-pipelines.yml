@@ -2,6 +2,7 @@
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
+
 trigger:
 - master
 
@@ -16,5 +17,6 @@ steps:
 
 - script: |
     npm install
+    npm install cypress --save-dev
     browserstack-cypress run
   displayName: 'npm install and build'
