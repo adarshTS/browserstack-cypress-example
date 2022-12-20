@@ -14,6 +14,11 @@ steps:
   inputs:
     versionSpec: '16'
   displayName: 'Install Node.js'
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'BrowserStack'
+    browserstackLocal: true
+- task: BrowserStackStopLocal@0
 
 - script: |
     npm install
