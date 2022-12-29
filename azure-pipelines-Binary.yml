@@ -1,0 +1,28 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm install cypress --save-dev
+    npm install -g browserstack-cypress-cli
+    wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
+    unzip BrowserStackLocal-linux-x64.zip
+    ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon start
+    browserstack-cypress run
+    ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon stop
+  displayName: 'npm install and build'
+
