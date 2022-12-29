@@ -21,8 +21,8 @@ steps:
     npm install -g browserstack-cypress-cli
     wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
     unzip BrowserStackLocal-linux-x64.zip
-    ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon start
+    ./BrowserStackLocal --key e5vxmEj2hHdcoYsnLopB --daemon start
     browserstack-cypress run
-    ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon stop
+    ./BrowserStackLocal --key e5vxmEj2hHdcoYsnLopB --daemon stop
   displayName: 'npm install and build'
 
