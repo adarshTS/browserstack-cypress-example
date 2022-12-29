@@ -27,7 +27,6 @@
     "connection_settings": {
         "local": true,
         "local_mode": "always-on"
-        "local_mode": null,
         "local_config_file": null
     },
     "disable_usage_reporting": false
